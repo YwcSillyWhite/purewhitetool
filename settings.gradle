@@ -1,0 +1,3 @@
+rootProject.name='PureWhiteTool'
+include ':app'
+include ':tool'
