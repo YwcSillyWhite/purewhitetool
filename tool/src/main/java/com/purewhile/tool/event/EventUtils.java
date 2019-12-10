@@ -10,26 +10,26 @@ import org.greenrobot.eventbus.EventBus;
 public class EventUtils {
 
     //注册
-    public void register(@NonNull Object object){
+    public static void register(@NonNull Object object){
         EventBus.getDefault().register(object);
     }
 
     //取消注册
-    public void unregister(@NonNull Object object){
+    public static void unregister(@NonNull Object object){
         EventBus.getDefault().unregister(object);
     }
 
 
     //发送
-    public void post(int code,String content){
+    public static void post(int code,String content){
         post(code,content,null);
     }
 
-    public void post(int code,Object object){
+    public static void post(int code,Object object){
         post(code,null,object);
     }
 
-    public void post(int code,String content,Object object){
+    public static void post(int code,String content,Object object){
         EventBean eventBean = new EventBean();
         eventBean.setCode(code);
         eventBean.setContent(content);
@@ -37,7 +37,7 @@ public class EventUtils {
             eventBean.setT(object);
     }
 
-    public void post(@NonNull EventBean eventBean){
+    public static void post(@NonNull EventBean eventBean){
         if (eventBean!=null){
             EventBus.getDefault().post(eventBean);
         }
@@ -45,15 +45,15 @@ public class EventUtils {
 
 
 
-    public void postSticky(int code,String content){
+    public static void postSticky(int code,String content){
         post(code,content,null);
     }
 
-    public void postSticky(int code,Object object){
+    public static void postSticky(int code,Object object){
         post(code,null,object);
     }
 
-    public void postSticky(int code,String content,Object object){
+    public static void postSticky(int code,String content,Object object){
         EventBean eventBean = new EventBean();
         eventBean.setCode(code);
         eventBean.setContent(content);
@@ -61,7 +61,7 @@ public class EventUtils {
             eventBean.setT(object);
     }
 
-    public void postSticky(@NonNull EventBean eventBean){
+    public static void postSticky(@NonNull EventBean eventBean){
         if (eventBean!=null){
             EventBus.getDefault().postSticky(eventBean);
         }
